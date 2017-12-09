@@ -14,7 +14,14 @@ Containers are built and pushed to the [Quay  registry](https://quay.io/reposito
 
 ## Using
 
-Although this project is designed to be used in a cloud environment, it can be 
+Although this project is designed to be used in a cloud environment, it can be run standalone using docker. Note that since the container needs to mount a FUSE filesystem (CVMFS), it needs to be run priveleged:
+
+```
+docker pull quay.io/aaroc/code-rade-client-centos7
+docker run --privileged -ti quay.io/code-rade-client-centos7 /bin/bash -c 'mount -a ; cat /cvmfs/code-rade.africa-grid.org/version`
+```
+
+This should display the version of the repository and the job which triggered it.
 
 # References
 
