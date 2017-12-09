@@ -1,4 +1,4 @@
-[![Docker Repository on Quay](https://quay.io/repository/aaroc/code-rade-client-centos7/status "Docker Repository on Quay")](https://quay.io/repository/aaroc/code-rade-client-centos7)
+[![Docker Repository on Quay](https://quay.io/repository/aaroc/code-rade-client-centos7/status "Docker Repository on Quay")](https://quay.io/repository/aaroc/code-rade-client-centos7) [![Build Status](https://ci.sagrid.ac.za/job/execution containers/badge/icon)](https://ci.sagrid.ac.za/job/execution containers)
 
 # CODE-RADE-client
 
@@ -11,10 +11,23 @@ CODE-RADE publishes pre-built and tested scientific applications to a [CVMFS](ht
 It applies the [cvmfs-client-2.2](https://github.com/AAROC/cvmfs-client-2.2) role - typically from [Ansible Galaxy](https://galaxy.ansible.com/AAROC/cvmfs-client-2-2/).
 Containers are built and pushed to the [Quay  registry](https://quay.io/repository/aaroc/code-rade-client-centos7).
 
+## Building 
+If you would like to build, extend or fork the containers, you will need Ansible Container available locally : 
+
+```
+virtualenv coderade
+source  coderade/bin/activate
+pip install ansible-container[docker]
+ansible-container build
+```
 
 ## Using
 
-Although this project is designed to be used in a cloud environment, it can be run standalone using docker. Note that since the container needs to mount a FUSE filesystem (CVMFS), it needs to be run priveleged:
+The containers are automatically built by [Jenkins](https://ci.sagrid.ac.za/view/Infrastructure/job/execution containers/) and pushed to Quay. They can be simply pulled and used standalone, or deployed against your cloud platform (Kubernetes or OpenShift)
+
+### Docker 
+
+Although this project is designed to be used in a cloud environment, it can be run standalone using docker. Note that since the container needs to mount a FUSE filesystem (CVMFS), it needs to be run privileged:
 
 ```
 docker pull quay.io/aaroc/code-rade-client-centos7
@@ -22,6 +35,15 @@ docker run --privileged -ti quay.io/code-rade-client-centos7 /bin/bash -c 'mount
 ```
 
 This should display the version of the repository and the job which triggered it.
+
+### Ansible Container
+
+You can run the containers locally using a Docker instance, once they have been built.
+
+```
+ansible-container run 
+```
+
 
 # References
 
