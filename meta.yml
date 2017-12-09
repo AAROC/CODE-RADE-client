@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Bruce Becker
+  description: Build the docker images for CODE-RADE users
+  company: Digital Delta
+  license: Apache-2.0
+  min_ansible_container_version: 0.9.3rc0
+  tags:
+    - coderade
+    - cloud
+    - cvmfs
+    - aaroc
+    - docker
+    - scientific
+    - applications
