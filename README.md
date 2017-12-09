@@ -1,4 +1,4 @@
-[![Docker Repository on Quay](https://quay.io/repository/aaroc/code-rade-client-centos7/status "Docker Repository on Quay")](https://quay.io/repository/aaroc/code-rade-client-centos7) [![Build Status](https://ci.sagrid.ac.za/job/execution containers/badge/icon)](https://ci.sagrid.ac.za/job/execution containers)
+[![Docker Repository on Quay](https://quay.io/repository/aaroc/code-rade-client-centos7/status "Docker Repository on Quay")](https://quay.io/repository/aaroc/code-rade-client-centos7) [![Build Status](https://ci.sagrid.ac.za/job/execution%20containers/badge/icon)](https://ci.sagrid.ac.za/job/execution containers)
 
 # CODE-RADE-client
 
